@@ -53,30 +53,21 @@ namespace FintechYazilim_YasarOzanKaraman
         }
         public void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-
             paint = false;
             sx = x - cx;
             sy = y - cy;
-          /*  var picture = new PictureBox();
+            /*var picture = new PictureBox();
             picture.Location = new Point(cx, cy);
             picture.Size = new Size(sx, sy);
-            picture.BackColor = brusher.Color;
+           // picture.BackColor = brusher.Color;
             picture.MouseDown += new MouseEventHandler(Picture_MouseDown);
             picture.MouseMove += new MouseEventHandler(Picture_MouseMove);
             picture.MouseUp += new MouseEventHandler(Picture_MouseUp);
             pictureBox1.Controls.Add(picture);*/
             if (index == 1)
-            {
-                var picture = new PictureBox();
-                picture.Location = new Point(cx, cy);
-                picture.Size = new Size(sx, sy);
-                picture.BackColor = brusher.Color;
-                picture.MouseDown += new MouseEventHandler(Picture_MouseDown);
-                picture.MouseMove += new MouseEventHandler(Picture_MouseMove);
-                picture.MouseUp += new MouseEventHandler(Picture_MouseUp);
-                pictureBox1.Controls.Add(picture);
-               // myRectangle = new Rectangle();
-              //  myRectangle.Fill(g, brusher, x, y, cx, cy);
+            { 
+                myRectangle = new Rectangle();
+                myRectangle.Fill(g, brusher, x, y, cx, cy);
 
             }
             if (index == 2)
@@ -142,14 +133,6 @@ namespace FintechYazilim_YasarOzanKaraman
         {
             sx = x - cx;
             sy = y - cy;
-            /*var picture = new PictureBox();
-            picture.Location = new Point(cx, cy);
-            picture.Size = new Size(sx, sy);
-            picture.BackColor = brusher.Color;
-            picture.MouseDown += new MouseEventHandler(Picture_MouseDown);
-            picture.MouseMove += new MouseEventHandler(Picture_MouseMove);
-            picture.MouseUp += new MouseEventHandler(Picture_MouseUp);
-            pictureBox1.Controls.Add(picture);*/
 
             activeControl = null;
             Cursor = Cursors.Default;
