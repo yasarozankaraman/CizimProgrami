@@ -43,6 +43,28 @@ namespace FintechYazilim_YasarOzanKaraman
             }
         }
 
+        private static void picture_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (draggables[(Control)sender] == true)
+            {
+                Point newLocationOffset = e.Location - mouseOffset;
+                ((Control)sender).Left += newLocationOffset.X;
+                ((Control)sender).Top += newLocationOffset.Y;
+            }
+        }
+
+        static void picture_MouseUp(object sender, MouseEventArgs e)
+        {
+            draggables[(Control)sender] = false;
+        }
+
+        static void picture_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseOffset = new Size(e.Location);
+            // turning on dragging
+            draggables[(Control)sender] = true;
+        }
+
         static void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseOffset = new Size(e.Location);
@@ -53,7 +75,7 @@ namespace FintechYazilim_YasarOzanKaraman
         static void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             // turning off dragging
-            draggables[(Control)sender] = false;
+           
         }
 
         static void pictureBox1_MouseMove(object sender, MouseEventArgs e)

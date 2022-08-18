@@ -15,3 +15,20 @@ C:\Users\Yasar\source\repos\Yeni klasör\FintechYazilim-YasarOzanKaraman\Fintech
 C:\Users\Yasar\source\repos\Yeni klasör\FintechYazilim-YasarOzanKaraman\FintechYazilim-YasarOzanKaraman\bin\Debug\System.Drawing.Common.xml
 C:\Users\Yasar\source\repos\Yeni klasör\FintechYazilim-YasarOzanKaraman\FintechYazilim-YasarOzanKaraman\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\Yasar\source\repos\Yeni klasör\FintechYazilim-YasarOzanKaraman\FintechYazilim-YasarOzanKaraman\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim-YasarOzanKaraman.csproj.AssemblyReference.cache
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim-YasarOzanKaraman.csproj.SuggestedBindingRedirects.cache
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim_YasarOzanKaraman.Form1.resources
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim_YasarOzanKaraman.Properties.Resources.resources
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim-YasarOzanKaraman.csproj.GenerateResource.cache
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim-YasarOzanKaraman.csproj.CoreCompileInputs.cache
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim-YasarOzanKaraman.exe
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim-YasarOzanKaraman.pdb
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\FintechYazilim-YasarOzanKaraman.exe.config
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\FintechYazilim-YasarOzanKaraman.exe
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\FintechYazilim-YasarOzanKaraman.pdb
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\Control.Draggable.dll
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\System.Drawing.Common.dll
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\bin\Debug\System.Drawing.Common.xml
+C:\Users\Yasar\OneDrive\Masaüstü\Yeni klasör (6)\CizimProgrami\FintechYazilim-YasarOzanKaraman\obj\Debug\FintechYazilim-YasarOzanKaraman.csproj.CopyComplete
