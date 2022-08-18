@@ -16,8 +16,7 @@ namespace FintechYazilim_YasarOzanKaraman
     public partial class Form1 : Form
     {
         Bitmap bm;
-        Bitmap deneme;
-        Graphics g, graphic;
+        Graphics g;
         bool paint = false;
         int x, y, cx, cy, sx, sy;
         int index;
@@ -99,26 +98,25 @@ namespace FintechYazilim_YasarOzanKaraman
         {
 
             Graphics g = e.Graphics;
-            Graphics graphic = e.Graphics;
 
             if (paint)
             {
 
                 if (index == 1)
                 {
-                    myRectangle.Fill(graphic, brusher, x, y, cx, cy);
+                    myRectangle.Fill(g, brusher, x, y, cx, cy);
                 }
                 if (index == 2)
                 {
-                    myEllips.Fill(graphic, brusher, x, y, cx, cy);
+                    myEllips.Fill(g, brusher, x, y, cx, cy);
                 }
                 if (index == 3)
                 {
-                    myTri.Fill(graphic, brusher, x, y, cx, cy);
+                    myTri.Fill(g, brusher, x, y, cx, cy);
                 }
                 if (index == 4)
                 {
-                    myHex.Fill(graphic, brusher, x, y, cx, cy);
+                    myHex.Fill(g, brusher, x, y, cx, cy);
                 }
 
             }
