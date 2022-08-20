@@ -10,6 +10,10 @@ namespace FintechYazilim_YasarOzanKaraman
     class Hexagon : Shape
     {
         PointF point1, point2, point3, point4, point5, point6;
+        public override void Picture(int x, int y, int cx, int cy)
+        {
+            throw new NotImplementedException();
+        }
         public override void Fill(Graphics graphics, SolidBrush brush, int x, int y, int cx, int cy)
         {
             point1 = new Point(Math.Abs(x+x-cx), cy);

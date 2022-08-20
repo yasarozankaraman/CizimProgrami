@@ -10,6 +10,10 @@ namespace FintechYazilim_YasarOzanKaraman
     class Triangle:Shape
     {
         PointF point1, point2, point3;
+        public override void Picture(int x, int y, int cx, int cy)
+        {
+            throw new NotImplementedException();
+        }
         public override void Fill(Graphics graphics, SolidBrush brush, int x, int y, int cx, int cy)
         {
             point1 = new Point(cx, Math.Abs(y - 2 * cy));

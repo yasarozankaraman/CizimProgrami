@@ -14,20 +14,11 @@ namespace FintechYazilim_YasarOzanKaraman
         private int r;
 
         private int sx, sy, bx, by;
-
-        Point StartXY;
-        Point EndXY;
-
-        public override void ObjectStart(int sx, int sy)
+        public override void Picture(int x, int y, int cx, int cy)
         {
-            StartXY.X = sx;
-            StartXY.Y = sy;
+            throw new NotImplementedException();
         }
-        public override void ObjectFinish(int fx, int fy)
-        {
-            EndXY.X = fx;
-            EndXY.Y = fy;
-        }
+
         public override void Fill(Graphics graphics, SolidBrush brush, int x, int y, int cx, int cy)
         {
             bx = cx;
@@ -37,9 +28,6 @@ namespace FintechYazilim_YasarOzanKaraman
             graphics.FillEllipse(brush, bx, by, sx, sy);
         }
 
-        public static implicit operator Control(Ellips v)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

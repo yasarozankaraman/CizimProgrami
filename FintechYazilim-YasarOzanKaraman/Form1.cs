@@ -15,9 +15,11 @@ namespace FintechYazilim_YasarOzanKaraman
 {
     public partial class Form1 : Form
     {
-        Bitmap bm;
-        Graphics g;
+
+        Bitmap bm, deneme;
+        Graphics g, graphic;
         bool paint = false;
+        bool control = false;
         int x, y, cx, cy, sx, sy;
         int index;
         SolidBrush brusher = new SolidBrush(Color.Black);
@@ -25,6 +27,7 @@ namespace FintechYazilim_YasarOzanKaraman
         Ellips myEllips = new Ellips();
         Triangle myTri = new Triangle();
         Hexagon myHex = new Hexagon();
+        PictureBox myPicture;
         public Form1()
         {
             InitializeComponent();
@@ -36,7 +39,6 @@ namespace FintechYazilim_YasarOzanKaraman
         }
         private Control activeControl;
         private Point previousPosition;
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -55,22 +57,39 @@ namespace FintechYazilim_YasarOzanKaraman
             paint = false;
             sx = x - cx;
             sy = y - cy;
-            /*var picture = new PictureBox();
-            picture.Location = new Point(cx, cy);
-            picture.Size = new Size(sx, sy);
-           // picture.BackColor = brusher.Color;
-            picture.MouseDown += new MouseEventHandler(Picture_MouseDown);
-            picture.MouseMove += new MouseEventHandler(Picture_MouseMove);
-            picture.MouseUp += new MouseEventHandler(Picture_MouseUp);
-            pictureBox1.Controls.Add(picture);*/
+
             if (index == 1)
-            { 
+            {/*
+                myPicture = new PictureBox();
+                myPicture.Width = x - cx;
+                myPicture.Height = y - cy;
+                myPicture.Location = new Point(cx, cy);
+                myPicture.Size = new Size(sx, sy);
+                g=myPicture.CreateGraphics();
+                g.FillRectangle(brusher, cx, cy, sx, sy);
+                myPicture.MouseDown += new MouseEventHandler(Picture_MouseDown);
+                myPicture.MouseMove += new MouseEventHandler(Picture_MouseMove);
+                myPicture.MouseUp += new MouseEventHandler(Picture_MouseUp);
+
+                pictureBox1.Controls.Add(myPicture);*/
                 myRectangle = new Rectangle();
                 myRectangle.Fill(g, brusher, x, y, cx, cy);
 
+
             }
             if (index == 2)
-            {
+            {/*
+                myPicture = new PictureBox();
+                myPicture.Location = new Point(cx, cy);
+                myPicture.Size = new Size(sx, sy);
+                deneme = new Bitmap(sx, sy);
+                graphic = Graphics.FromImage(deneme);
+                
+                myPicture.MouseDown += new MouseEventHandler(Picture_MouseDown);
+                myPicture.MouseMove += new MouseEventHandler(Picture_MouseMove);
+                myPicture.MouseUp += new MouseEventHandler(Picture_MouseUp);
+
+                pictureBox1.Controls.Add(myPicture);*/
                 myEllips = new Ellips();
                 myEllips.Fill(g, brusher, x, y, cx, cy);
             }
@@ -98,6 +117,7 @@ namespace FintechYazilim_YasarOzanKaraman
         {
 
             Graphics g = e.Graphics;
+            Graphics graphic = e.Graphics;
 
             if (paint)
             {
@@ -105,6 +125,7 @@ namespace FintechYazilim_YasarOzanKaraman
                 if (index == 1)
                 {
                     myRectangle.Fill(g, brusher, x, y, cx, cy);
+
                 }
                 if (index == 2)
                 {
@@ -122,22 +143,19 @@ namespace FintechYazilim_YasarOzanKaraman
             }
 
         }
-        private void Picture_Paint(object sender, PaintEventArgs e)
+        public void Picture_Paint(object sender, PaintEventArgs e)
         {
-            Graphics graphic = e.Graphics;
-           
+
         }
-        private void Picture_MouseUp(object sender, MouseEventArgs e)
+        public void Picture_MouseUp(object sender, MouseEventArgs e)
         {
-            sx = x - cx;
-            sy = y - cy;
 
             activeControl = null;
             Cursor = Cursors.Default;
         }
-
-        private void Picture_MouseMove(object sender, MouseEventArgs e)
+        public void Picture_MouseMove(object sender, MouseEventArgs e)
         {
+
             if (activeControl == null || activeControl != sender)
             {
                 return;
@@ -146,9 +164,9 @@ namespace FintechYazilim_YasarOzanKaraman
             location.Offset(e.Location.X - previousPosition.X, e.Location.Y - previousPosition.Y);
             activeControl.Location = location;
         }
-
-        private void Picture_MouseDown(object sender, MouseEventArgs e)
+        public void Picture_MouseDown(object sender, MouseEventArgs e)
         {
+
             activeControl = sender as Control;
             previousPosition = e.Location;
             Cursor = Cursors.Hand;
@@ -227,6 +245,7 @@ namespace FintechYazilim_YasarOzanKaraman
         }
         private void button16_Click(object sender, EventArgs e)
         {
+            index = 7;
             g.Clear(Color.White);
             pictureBox1.Image = bm;
 
@@ -234,17 +253,23 @@ namespace FintechYazilim_YasarOzanKaraman
 
         public void button18_Click(object sender, EventArgs e)
         {
-
+            index = 5;
+            control = true;
+        }
+        public void button18_DoubleClick(object sender, EventArgs e)
+        {
+            index = 5;
+            control = false;
         }
         private void button17_Click(object sender, EventArgs e)
         {
-            //   ControlExtension.Draggable(activeControl, false);
+            index = 6;
 
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            var fileFullName = $"c:\\temp\\paint_{DateTime.Now.Ticks}.png";
+            var fileFullName = $"c:\\temp\\paint_{DateTime.Now.Ticks}.txt";
             var bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             var graphis = Graphics.FromImage(bitmap);
             var rectangle = pictureBox1.RectangleToScreen(pictureBox1.ClientRectangle);

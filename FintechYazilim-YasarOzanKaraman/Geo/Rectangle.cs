@@ -10,13 +10,16 @@ namespace FintechYazilim_YasarOzanKaraman
 {
     class Rectangle:Shape
     {
-        SolidBrush brusher = new SolidBrush(Color.Black);
-        PointF point1, point2, point3,point4;
-
         private int sx,sy,bx,by;
-        Point StartXY;
-        Point EndXY;    
-        
+        Bitmap Bm;
+
+        public override void Picture(int x, int y, int cx, int cy)
+        {
+            sx = x - cx;
+            sy = y - cy;    
+            Bm= new Bitmap(sx, sy);
+            
+        }
         public override void Fill(Graphics graphics,SolidBrush brush,int x, int y, int cx, int cy)
         {
             bx = cx;  
@@ -26,6 +29,7 @@ namespace FintechYazilim_YasarOzanKaraman
             graphics.FillRectangle(brush,bx,by,sx,sy);
 
         }
-    
+
+     
     }
 }

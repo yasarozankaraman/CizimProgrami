@@ -8,21 +8,9 @@ using System.Windows.Forms;
 
 namespace FintechYazilim_YasarOzanKaraman
 {
-    class Shape
+    abstract class Shape
     {
-        private int x, y;
-        public int X,Y;
-        public virtual void ObjectStart(int sx,int sy)
-        {
-
-        }
-        public virtual void ObjectFinish(int fx, int fy)
-        {
-
-        }
-        public virtual void Fill(Graphics graphics,SolidBrush brush,int x,int y,int cx,int cy)
-        {
-
-        }
+        public abstract void Fill(Graphics graphics, SolidBrush brush, int x, int y, int cx, int cy);
+        public abstract void Picture(int x, int y, int cx, int cy);
     }
 }
