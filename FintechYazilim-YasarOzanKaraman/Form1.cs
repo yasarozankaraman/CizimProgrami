@@ -24,9 +24,11 @@ namespace FintechYazilim_YasarOzanKaraman
         int index;
         SolidBrush brusher = new SolidBrush(Color.Black);
         Rectangle myRectangle = new Rectangle();
-        Ellips myEllips = new Ellips();
-        Triangle myTri = new Triangle();
-        Hexagon myHex = new Hexagon();
+        Ellips myEllips=new Ellips();
+        Triangle myTri=new Triangle();
+        Hexagon myHex =new Hexagon();
+        List<PictureBox> pictureBoxList = new List<PictureBox>();
+
         public Form1()
         {
             InitializeComponent();
@@ -78,24 +80,24 @@ namespace FintechYazilim_YasarOzanKaraman
                 myPicture.MouseMove += new MouseEventHandler(Picture_MouseMove);
                 myPicture.MouseUp += new MouseEventHandler(Picture_MouseUp);
                 */
-                myRectangle = new Rectangle();
+                Rectangle myRectangle = new Rectangle();
                 myRectangle.Fill(g, brusher, x, y, cx, cy);
 
 
             }
             if (index == 2)
             {
-                myEllips = new Ellips();
+                Ellips myEllips = new Ellips();
                 myEllips.Fill(g, brusher, x, y, cx, cy);
             }
             if (index == 3)
             {
-                myTri = new Triangle();
+                Triangle myTri = new Triangle();
                 myTri.Fill(g, brusher, x, y, cx, cy);
             }
             if (index == 4)
             {
-                myHex = new Hexagon();
+                Hexagon myHex = new Hexagon();
                 myHex.Fill(g, brusher, x, y, cx, cy);
             }
 

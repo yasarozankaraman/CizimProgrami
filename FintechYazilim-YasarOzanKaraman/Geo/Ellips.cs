@@ -11,8 +11,6 @@ namespace FintechYazilim_YasarOzanKaraman
     class Ellips:Shape
     {
 
-        private int r;
-
         private int sx, sy, bx, by;
         public override void Picture(int x, int y, int cx, int cy)
         {
