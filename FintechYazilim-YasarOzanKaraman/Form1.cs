@@ -27,6 +27,7 @@ namespace FintechYazilim_YasarOzanKaraman
         Ellips myEllips=new Ellips();
         Triangle myTri=new Triangle();
         Hexagon myHex =new Hexagon();
+        PictureBox myPicture;
         List<PictureBox> pictureBoxList = new List<PictureBox>();
 
         public Form1()
@@ -56,39 +57,28 @@ namespace FintechYazilim_YasarOzanKaraman
         public void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             paint = false;
-            sx = x - cx;
-            sy = y - cy;
+            sx = Math.Abs(cx - x);
+            sy = Math.Abs(cy - y);
+            /*
+            myPicture=new PictureBox();
+            myPicture.Location = new Point(cx, cy);
+            myPicture.Size = new Size(sx, sy);
+            var denemem = new Bitmap(myPicture.Size.Width, myPicture.Size.Height);
+            g = Graphics.FromImage(denemem);
+            myPicture.BackgroundImage = denemem;
+            myPicture.BackColor = Color.Transparent;*/
 
             if (index == 1)
-            {/*
-
-                myPicture = new PictureBox();
-                myPicture.Width = x - cx;
-                myPicture.Height = y - cy;
-                myPicture.Location = new Point(cx, cy);
-                myPicture.Size = new Size(sx, sy);
-
-                var denemem = new Bitmap(myPicture.Width, myPicture.Height);
-                var graphic = Graphics.FromImage(denemem);
-                graphic.FillRectangle(brusher, cx, cy, sx, sy);
-                myPicture.Image = denemem;
-                pictureBox1.Controls.Add(myPicture);
-
-                //  myPicture.CreateGraphics().FillRectangle(brusher,cx,cy,sx,sy);
-
-                myPicture.MouseDown += new MouseEventHandler(Picture_MouseDown);
-                myPicture.MouseMove += new MouseEventHandler(Picture_MouseMove);
-                myPicture.MouseUp += new MouseEventHandler(Picture_MouseUp);
-                */
+            {
                 Rectangle myRectangle = new Rectangle();
                 myRectangle.Fill(g, brusher, x, y, cx, cy);
-
 
             }
             if (index == 2)
             {
                 Ellips myEllips = new Ellips();
                 myEllips.Fill(g, brusher, x, y, cx, cy);
+               
             }
             if (index == 3)
             {
@@ -100,7 +90,11 @@ namespace FintechYazilim_YasarOzanKaraman
                 Hexagon myHex = new Hexagon();
                 myHex.Fill(g, brusher, x, y, cx, cy);
             }
-
+            /*myPicture.MouseDown += new MouseEventHandler(Picture_MouseDown);
+            myPicture.MouseMove += new MouseEventHandler(Picture_MouseMove);
+            myPicture.MouseUp += new MouseEventHandler(Picture_MouseUp);
+            pictureBox1.Controls.Add(myPicture);
+            pictureBoxList.Add(myPicture);    */
         }
         public void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -109,16 +103,12 @@ namespace FintechYazilim_YasarOzanKaraman
             cy = e.Y;
 
         }
-
         public void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-
+        { 
             Graphics g = e.Graphics;
-            Graphics graphic = e.Graphics;
 
             if (paint)
             {
-
                 if (index == 1)
                 {
                     myRectangle.Fill(g, brusher, x, y, cx, cy);
@@ -242,6 +232,7 @@ namespace FintechYazilim_YasarOzanKaraman
         }
         private void button16_Click(object sender, EventArgs e)
         {
+            pictureBoxList.Clear();
             index = 7;
             g.Clear(Color.White);
             pictureBox1.Image = bm;
