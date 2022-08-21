@@ -35,6 +35,7 @@ namespace FintechYazilim_YasarOzanKaraman
         }
         public override void Fill(Graphics graphics, SolidBrush brush, int x, int y, int cx, int cy)
         {
+            
             point1 = new Point(Math.Abs(x+x-cx), cy);
             point2 = new Point(x, Math.Abs(y - 2 * cy));
             point3 = new Point(Math.Abs(x - 2 * (cx)), Math.Abs(y - 2 * cy));
