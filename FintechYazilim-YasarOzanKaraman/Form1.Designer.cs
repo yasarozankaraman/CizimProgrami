@@ -53,6 +53,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             groupBox4 = new System.Windows.Forms.GroupBox();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +65,7 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(this.button14);
+            groupBox4.Controls.Add(this.button16);
             groupBox4.Controls.Add(this.button15);
             groupBox4.Location = new System.Drawing.Point(859, 607);
             groupBox4.Name = "groupBox4";
@@ -76,7 +78,7 @@
             // button14
             // 
             this.button14.Image = ((System.Drawing.Image)(resources.GetObject("button14.Image")));
-            this.button14.Location = new System.Drawing.Point(16, 15);
+            this.button14.Location = new System.Drawing.Point(95, 15);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(70, 70);
             this.button14.TabIndex = 9;
@@ -86,7 +88,7 @@
             // button15
             // 
             this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
-            this.button15.Location = new System.Drawing.Point(95, 15);
+            this.button15.Location = new System.Drawing.Point(171, 15);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(70, 70);
             this.button15.TabIndex = 10;
@@ -173,8 +175,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button19);
             this.groupBox3.Controls.Add(this.button18);
-            this.groupBox3.Controls.Add(this.button16);
             this.groupBox3.Controls.Add(this.button17);
             this.groupBox3.Location = new System.Drawing.Point(859, 512);
             this.groupBox3.Name = "groupBox3";
@@ -197,7 +199,7 @@
             // button16
             // 
             this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
-            this.button16.Location = new System.Drawing.Point(171, 13);
+            this.button16.Location = new System.Drawing.Point(16, 15);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(70, 70);
             this.button16.TabIndex = 15;
@@ -208,7 +210,7 @@
             // 
             this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button17.Location = new System.Drawing.Point(95, 13);
+            this.button17.Location = new System.Drawing.Point(171, 13);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(70, 70);
             this.button17.TabIndex = 14;
@@ -325,6 +327,16 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button19
+            // 
+            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
+            this.button19.Location = new System.Drawing.Point(92, 13);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(70, 70);
+            this.button19.TabIndex = 15;
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +385,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
         public System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button19;
     }
 }
 

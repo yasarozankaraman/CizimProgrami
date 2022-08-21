@@ -12,11 +12,20 @@ namespace FintechYazilim_YasarOzanKaraman
     {
 
         private int sx, sy, bx, by;
-        public override void Picture(int x, int y, int cx, int cy)
+        public override PictureBox Pic(SolidBrush brush, int x, int y, int cx, int cy)
         {
-            throw new NotImplementedException();
-        }
+            sx = Math.Abs(cx - x);
+            sy = Math.Abs(cy - y);
+            PictureBox myPicture = new PictureBox();
+            myPicture.Location = new Point(cx, cy);
+            myPicture.Size = new Size(sx, sy);
+            var deneme = new Bitmap(sx, sy);
+            var graphis = Graphics.FromImage(deneme);
+            myPicture.Image = deneme;
+            graphis.FillEllipse(brush, 0, 0, sx, sy);
+            return myPicture;
 
+        }
         public override void Fill(Graphics graphics, SolidBrush brush, int x, int y, int cx, int cy)
         {
             bx = cx;

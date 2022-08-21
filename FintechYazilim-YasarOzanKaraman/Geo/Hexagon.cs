@@ -4,13 +4,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FintechYazilim_YasarOzanKaraman
 {
     class Hexagon : Shape
     {
         PointF point1, point2, point3, point4, point5, point6;
-        public override void Picture(int x, int y, int cx, int cy)
+        public override PictureBox Pic(SolidBrush brush, int x, int y, int cx, int cy)
         {
             throw new NotImplementedException();
         }

@@ -24,12 +24,11 @@ namespace FintechYazilim_YasarOzanKaraman
         int index;
         SolidBrush brusher = new SolidBrush(Color.Black);
         Rectangle myRectangle = new Rectangle();
-        Ellips myEllips=new Ellips();
-        Triangle myTri=new Triangle();
-        Hexagon myHex =new Hexagon();
+        Ellips myEllips = new Ellips();
+        Triangle myTri = new Triangle();
+        Hexagon myHex = new Hexagon();
         PictureBox myPicture;
         List<PictureBox> pictureBoxList = new List<PictureBox>();
-
         public Form1()
         {
             InitializeComponent();
@@ -59,42 +58,51 @@ namespace FintechYazilim_YasarOzanKaraman
             paint = false;
             sx = Math.Abs(cx - x);
             sy = Math.Abs(cy - y);
-            /*
-            myPicture=new PictureBox();
-            myPicture.Location = new Point(cx, cy);
-            myPicture.Size = new Size(sx, sy);
-            var denemem = new Bitmap(myPicture.Size.Width, myPicture.Size.Height);
-            g = Graphics.FromImage(denemem);
-            myPicture.BackgroundImage = denemem;
-            myPicture.BackColor = Color.Transparent;*/
 
             if (index == 1)
             {
                 Rectangle myRectangle = new Rectangle();
-                myRectangle.Fill(g, brusher, x, y, cx, cy);
-
+                myPicture = myRectangle.Pic(brusher, x, y, cx, cy);
+                myPicture.BackColor = Color.Transparent;
+                pictureBox1.Controls.Add(myPicture);
+                Control(myPicture);
             }
             if (index == 2)
             {
                 Ellips myEllips = new Ellips();
-                myEllips.Fill(g, brusher, x, y, cx, cy);
-               
+                myPicture = myEllips.Pic(brusher, x, y, cx, cy);
+                myPicture.BackColor = Color.Transparent;
+                pictureBox1.Controls.Add(myPicture);
+                Control(myPicture);
             }
             if (index == 3)
             {
-                Triangle myTri = new Triangle();
-                myTri.Fill(g, brusher, x, y, cx, cy);
+               Triangle myTri = new Triangle();
+               myPicture = myTri.Pic(brusher, x, y, cx, cy);
+               pictureBox1.Controls.Add(myPicture);
+               Control(myPicture);
+
+                //Triangle myTri = new Triangle();
+                //myTri.Fill(g, brusher, x, y, cx, cy);
             }
             if (index == 4)
             {
                 Hexagon myHex = new Hexagon();
                 myHex.Fill(g, brusher, x, y, cx, cy);
             }
-            /*myPicture.MouseDown += new MouseEventHandler(Picture_MouseDown);
-            myPicture.MouseMove += new MouseEventHandler(Picture_MouseMove);
-            myPicture.MouseUp += new MouseEventHandler(Picture_MouseUp);
-            pictureBox1.Controls.Add(myPicture);
-            pictureBoxList.Add(myPicture);    */
+         //   Control(myPicture);
+          //  pictureBoxList.Add(myPicture);
+          //  pictureBox1.Controls.Add(myPicture);
+        }
+
+        void Control(PictureBox pictureBox)
+        {
+            if (myPicture != null)
+            {
+                myPicture.MouseDown += new MouseEventHandler(Picture_MouseDown);
+                myPicture.MouseMove += new MouseEventHandler(Picture_MouseMove);
+                myPicture.MouseUp += new MouseEventHandler(Picture_MouseUp);
+            }
         }
         public void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -104,9 +112,8 @@ namespace FintechYazilim_YasarOzanKaraman
 
         }
         public void pictureBox1_Paint(object sender, PaintEventArgs e)
-        { 
+        {
             Graphics g = e.Graphics;
-
             if (paint)
             {
                 if (index == 1)
@@ -136,7 +143,6 @@ namespace FintechYazilim_YasarOzanKaraman
         }
         public void Picture_MouseUp(object sender, MouseEventArgs e)
         {
-
             activeControl = null;
             Cursor = Cursors.Default;
         }
@@ -150,13 +156,16 @@ namespace FintechYazilim_YasarOzanKaraman
             var location = activeControl.Location;
             location.Offset(e.Location.X - previousPosition.X, e.Location.Y - previousPosition.Y);
             activeControl.Location = location;
+
         }
         public void Picture_MouseDown(object sender, MouseEventArgs e)
         {
-
-            activeControl = sender as Control;
-            previousPosition = e.Location;
-            Cursor = Cursors.Hand;
+            if (control == true)
+            {
+                activeControl = sender as Control;
+                previousPosition = e.Location;
+                Cursor = Cursors.Hand;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -244,15 +253,19 @@ namespace FintechYazilim_YasarOzanKaraman
             index = 5;
             control = true;
         }
-        public void button18_DoubleClick(object sender, EventArgs e)
+        public void button18_(object sender, EventArgs e)
         {
-            index = 5;
-            control = false;
         }
         private void button17_Click(object sender, EventArgs e)
         {
-            index = 6;
 
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            index = 6;
+            control = false;
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -261,7 +274,7 @@ namespace FintechYazilim_YasarOzanKaraman
             SaveFileDialog file = new SaveFileDialog();
             file.Filter = "Text|*.txt|All|*.*";
             file.FileName = "";
-            DialogResult ok= file.ShowDialog();
+            DialogResult ok = file.ShowDialog();
             if (ok == DialogResult.OK)
             {
                 var bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);

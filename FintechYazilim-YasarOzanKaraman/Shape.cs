@@ -11,6 +11,6 @@ namespace FintechYazilim_YasarOzanKaraman
     abstract class Shape
     {
         public abstract void Fill(Graphics graphics, SolidBrush brush, int x, int y, int cx, int cy);
-        public abstract void Picture(int x, int y, int cx, int cy);
+        public abstract PictureBox Pic(SolidBrush brush,int x, int y, int cx, int cy);
     }
 }

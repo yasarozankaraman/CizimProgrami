@@ -56,7 +56,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PicBox.cs" />
+    <Compile Include="PicBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Shape.cs" />
     <Compile Include="Geo\Ellips.cs" />
     <Compile Include="Form1.cs">

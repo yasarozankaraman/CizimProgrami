@@ -11,14 +11,18 @@ namespace FintechYazilim_YasarOzanKaraman
     class Rectangle:Shape
     {
         private int sx,sy,bx,by;
-        Bitmap Bm;
-
-        public override void Picture(int x, int y, int cx, int cy)
+        public override PictureBox Pic(SolidBrush brush, int x, int y, int cx, int cy)
         {
-            sx = x - cx;
-            sy = y - cy;    
-            Bm= new Bitmap(sx, sy);
-            
+            sx = Math.Abs(cx - x);
+            sy = Math.Abs(cy - y);
+            PictureBox myPicture = new PictureBox();
+            myPicture.Location = new Point(cx, cy);
+            myPicture.Size = new Size(sx, sy);
+            var deneme = new Bitmap(sx, sy);
+            var graphis = Graphics.FromImage(deneme);
+            myPicture.Image = deneme;
+            graphis.FillRectangle(brush, 0, 0, sx, sy);
+            return myPicture;
         }
         public override void Fill(Graphics graphics,SolidBrush brush,int x, int y, int cx, int cy)
         {
