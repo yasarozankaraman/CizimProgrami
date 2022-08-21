@@ -15,7 +15,7 @@ namespace FintechYazilim_YasarOzanKaraman
 {
     public partial class Form1 : Form
     {
-
+        int sayac=0;    
         Bitmap bm;
         Graphics g;
         bool paint = false;
@@ -66,6 +66,7 @@ namespace FintechYazilim_YasarOzanKaraman
                 myPicture.BackColor = Color.Transparent;
                 pictureBox1.Controls.Add(myPicture);
                 Control(myPicture);
+                pictureBoxList.Add(myPicture);
             }
             if (index == 2)
             {
@@ -252,7 +253,16 @@ namespace FintechYazilim_YasarOzanKaraman
         public void button18_Click(object sender, EventArgs e)
         {
             index = 5;
-            control = true;
+            sayac++;
+                if (sayac % 2 == 0)
+            {
+                control = false;
+            }
+            if (sayac % 2 == 1)
+            {
+                control = true;
+            }
+
         }
         public void button18_(object sender, EventArgs e)
         {
