@@ -78,9 +78,10 @@ namespace FintechYazilim_YasarOzanKaraman
             if (index == 3)
             {
                Triangle myTri = new Triangle();
-               myPicture = myTri.Pic(brusher, x, y, cx, cy);
-               pictureBox1.Controls.Add(myPicture);
-               Control(myPicture);
+                myTri.Fill(g, brusher, x, y, cx, cy);
+              // myPicture = myTri.Pic(brusher, x, y, cx, cy);
+            //   pictureBox1.Controls.Add(myPicture);
+          //     Control(myPicture);
 
                 //Triangle myTri = new Triangle();
                 //myTri.Fill(g, brusher, x, y, cx, cy);
