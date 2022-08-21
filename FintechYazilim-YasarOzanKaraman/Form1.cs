@@ -15,7 +15,7 @@ namespace FintechYazilim_YasarOzanKaraman
 {
     public partial class Form1 : Form
     {
-        int sayac=0;    
+        int sayac = 0;
         Bitmap bm;
         Graphics g;
         bool paint = false;
@@ -64,37 +64,38 @@ namespace FintechYazilim_YasarOzanKaraman
                 Rectangle myRectangle = new Rectangle();
                 myPicture = myRectangle.Pic(brusher, x, y, cx, cy);
                 myPicture.BackColor = Color.Transparent;
+                pictureBoxList.Add(myPicture);
                 pictureBox1.Controls.Add(myPicture);
                 Control(myPicture);
-                pictureBoxList.Add(myPicture);
             }
             if (index == 2)
             {
                 Ellips myEllips = new Ellips();
                 myPicture = myEllips.Pic(brusher, x, y, cx, cy);
                 myPicture.BackColor = Color.Transparent;
+                pictureBoxList.Add(myPicture);
                 pictureBox1.Controls.Add(myPicture);
                 Control(myPicture);
             }
             if (index == 3)
             {
-               Triangle myTri = new Triangle();
-                myTri.Fill(g, brusher, x, y, cx, cy);
-              // myPicture = myTri.Pic(brusher, x, y, cx, cy);
-            //   pictureBox1.Controls.Add(myPicture);
-          //     Control(myPicture);
+                Triangle myTri = new Triangle();
+                myPicture = myTri.Pic(brusher, x, y, cx, cy);
+                myPicture.BackColor = Color.Transparent;
+                pictureBoxList.Add(myPicture);
+                pictureBox1.Controls.Add(myPicture);
+                Control(myPicture);
 
-                //Triangle myTri = new Triangle();
-                //myTri.Fill(g, brusher, x, y, cx, cy);
             }
             if (index == 4)
             {
                 Hexagon myHex = new Hexagon();
-                myHex.Fill(g, brusher, x, y, cx, cy);
+                myPicture = myHex.Pic(brusher, x, y, cx, cy);
+                myPicture.BackColor = Color.Transparent;
+                pictureBoxList.Add(myPicture);
+                pictureBox1.Controls.Add(myPicture);
+                Control(myPicture);
             }
-         //   Control(myPicture);
-          //  pictureBoxList.Add(myPicture);
-          //  pictureBox1.Controls.Add(myPicture);
         }
 
         void Control(PictureBox pictureBox)
@@ -243,10 +244,12 @@ namespace FintechYazilim_YasarOzanKaraman
         }
         private void button16_Click(object sender, EventArgs e)
         {
-            pictureBoxList.Clear();
             index = 7;
+            pictureBoxList.Clear();
+            Bitmap bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Graphics g = Graphics.FromImage(bm);
             g.Clear(Color.White);
-            pictureBox1.Image = bm;
+            pictureBox1.BackgroundImage = bm;
 
         }
 
@@ -254,7 +257,7 @@ namespace FintechYazilim_YasarOzanKaraman
         {
             index = 5;
             sayac++;
-                if (sayac % 2 == 0)
+            if (sayac % 2 == 0)
             {
                 control = false;
             }
